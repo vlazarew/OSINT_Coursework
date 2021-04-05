@@ -1,0 +1,138 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+
+\usetheme{metropolis}
+%\usepackage[english]{babel}
+\usepackage[russian]{babel}
+%\usecolortheme{seahorse}
+%\setbeameroption{show notes}
+\usepackage{array}
+\usepackage{url}
+\setbeamerfont{footnote}{size=\tiny}
+\usepackage{multicol}
+
+\author{Курсовая работа \\\\ Студент: Лазарев В. А.\\Научный руководитель: Яцков А. К.}
+\title{Исследование методов OSINT для поиска информации о человеке}
+
+\institute{\includegraphics[width=1in]{pic/logo_RU_basic_RGB.png}}
+\date{\today}
+
+\definecolor{BlueTOL}{HTML}{055AAA}
+\definecolor{BrownTOL}{HTML}{666633}
+\definecolor{GreenTOL}{HTML}{225522}
+
+\setbeamercolor{normal text}{fg=BlueTOL,bg=white}
+\setbeamercolor{alerted text}{fg=BrownTOL}
+\setbeamercolor{example text}{fg=GreenTOL}
+
+\metroset{block=fill}
+
+\setbeamercolor{block title alerted}{use=alerted text,
+    fg=alerted text.fg,
+    bg=alerted text.bg!80!alerted text.fg}
+\setbeamercolor{block body alerted}{use={block title alerted, alerted text},
+    fg=alerted text.fg,
+    bg=block title alerted.bg!50!alerted text.bg}
+\setbeamercolor{block title example}{use=example text,
+    fg=example text.fg,
+    bg=example text.bg!80!example text.fg}
+\setbeamercolor{block body example}{use={block title example, example text},
+    fg=example text.fg,
+    bg=block title example.bg!50!example text.bg}
+    
+\makeatletter
+\newlength\beamerleftmargin
+\setlength\beamerleftmargin{\Gm@lmargin}
+\makeatother    
+    
+\begin{document}
+
+\metroset{numbering=none}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=-4pt] at (current page.north east) {\includegraphics[height=0.5cm]{pic/logo_RU_basic_RGB.png}};
+\end{tikzpicture}}
+
+\metroset{numbering=fraction}
+
+\begin{frame}
+    \frametitle{Что такое OSINT?}
+
+    OSINT – это разведка, производимая на основе общедоступных источников данных. Включает в себя поиск, выбор сбор и анализ информации.
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{С какими источниками работает OSINT?}
+    
+    OSINT работает только с общедоступными источниками данными, доступными как онлайн, так и оффлайн: 
+    
+    \begin{itemize}
+        \item Интернет: профили соц. сетей, форумы, блоги;
+        \item СМИ: телевидения, газеты, радио;
+        \item геопозиция;
+        \item фото и видео;
+        \item книги и журналы (в т.ч. и научные).
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Для чего нужен OSINT?}
+
+    OSINT-системы позволяют сущетсвенно ускорить поиск необходимой информации. Они обладают функционалом дополнительных фильтров и отборов, что делает поиск более точным, а также выполняют анализ полученных данных автоматически. \\\\
+    В случае поиска информации о людях, задействуют сразу множество публичных источников.
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Кому интересен OSINT?}
+
+    \begin{itemize}
+        \item Правительство;
+        \item международные и гуманитарные организации;
+        \item правоохранительные органы;
+        \item бизнес-компании.
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Постановка задачи}
+    
+    Цель: Исследовать текущие методы и приложения, которые работают по принципу OSINT, собирают и предоставляют информацию о людях. Выбрать лучшие кейсы и практики. На основе проделанного анализа дописать в Talisman новые методы поиска.
+    
+    План работ: \\
+    
+    \begin{enumerate}
+        \item Выполнить детальный анализ существующих решений. 
+        \item Посмотреть реализованные методы сбора информации.
+        \item Выбрать среди методов самые оптимальные по качеству/времени/актуальности.
+        \item Расширить Talisman новыми найденными методами.
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Анализ существующих решений}
+    
+    \begin{itemize}
+        \item Виток-OSINT;
+        \item Maltego - поиск людей в соц. сетях и не только;
+        \item theHarvester – поиск по email;
+        \item Creepy - поиск по геопозиции;
+        \item whitepages;
+        \item методы на GitHub.
+    \end{itemize} 
+    
+\end{frame}
+
+\metroset{numbering=none}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\end{document}
