@@ -12,10 +12,10 @@
 
 \subsubsection{Архитектура работы сборщиков в поисковых сервисах}
 \par
-Диаграмма классов приведена на рис. 7. (А рисунок то где!!!)
+Диаграмма классов приведена на рис. 7.
 
 \begin{figure}[H]
-    \center{\includegraphics[height=6cm,keepaspectratio]{pictures/gzlogo.png}}
+    \center{\includegraphics[height=10cm,keepaspectratio]{pictures/SearchNews.png}}
     \caption{Диаграмма классов сборщик в поисковых сервисах.}
     \label{ris:image}
 \end{figure}
@@ -40,8 +40,8 @@
     \item Вспомогательные классы:
     \begin{itemize}
         \item GoogleAPICredentialsDownloaderMiddleware -- данный класс производит неким проводником между Scrapy Engine и 
-        GoogleSearchApiSpider, в нем идет выбор API-ключа по стратегии "выбери тот ключ, у которого осталось 
-        наибольшее количество запросов" и обработка 429 ошибки (случай, когда API-ключ неожиданно превысил лимит 
+        GoogleSearchApiSpider, в нем идет выбор API-ключа по стратегии <<выбери тот ключ, у которого осталось 
+        наибольшее количество запросов>> и обработка 429 ошибки (случай, когда API-ключ неожиданно превысил лимит 
         использований и его необходимо признать невалидным, и запустить запрос с новым ключом);
         \item SplashFilesPipeline -- выкачивает все файлы, которые были получены в ходе сбора, если отобранная 
         ссылка была ссылкой не на html-страницу. 
@@ -50,18 +50,16 @@
 
 
 \subsubsection{Архитектура работы сборщиков в социальной сети LinkedIn}
-\par
-Диаграмма классов приведена на рис. 6. (А рисунок то где!!!)
 
-\begin{figure}[H]
-    \center{\includegraphics[height=6cm,keepaspectratio]{pictures/gzlogo.png}}
-    \caption{Диаграмма классов сборщик в социальной сети LinkedIn.}
-    \label{ris:image}
-\end{figure}
 
 Система включает следующие n классов:
 \begin{itemize}
     \item поиск и сбор с помощью навигации по атрибутам html-кода страницы и извлечение информации из атрибутов:
+    \begin{figure}[H]
+        \center{\includegraphics[height=14cm,keepaspectratio]{pictures/LinkedInWeb.png}}
+        \caption{Диаграмма классов сборщик в социальной сети LinkedIn web.}
+        \label{ris:image}
+    \end{figure}
     \begin{itemize}
         \item AbstractSearchSpider -- абстрактный класс для поиска и сбора людей и организаций;
         \item LinkedInCompanySpider -- сборщик данных компаний;
@@ -73,6 +71,11 @@
         собирать информацию о найденных людях.
     \end{itemize}
     \item поиск и сбор с помощью закрытого LinkedIn API:
+    \begin{figure}[H]
+        \center{\includegraphics[height=14cm,keepaspectratio]{pictures/LinkedInAPI.png}}
+        \caption{Диаграмма классов сборщик в социальной сети LinkedIn API.}
+        \label{ris:image}
+    \end{figure}
     \begin{itemize}
         \item AbstractLinkedInApiSpider -- класс, который эмулирует для получения данных из социальной сети посредством
         API;
